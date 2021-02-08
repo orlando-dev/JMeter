@@ -1,0 +1,7 @@
+Para executar a aplicação web simples,
+
+1 - Abra a pasta digital-toys-web-application
+
+2 - Execute o arquivo chamado:
+	 startDt.bat
+Uma aplicação vai funcionar no localhost:8080

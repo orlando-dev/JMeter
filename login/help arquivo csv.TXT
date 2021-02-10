@@ -1,0 +1,30 @@
+Para o programa Apache JMeter ler o arquivo CSV
+
+1 - Crie um arquivo 
+	.txt
+2 - Dentro do arquivo coloque os dados que vai ser usado no JMeter
+	dessa forma ex;
+		user1@dt.com;user1
+		user2@dt.com;user2
+			//
+o primeiro seria o email, após ponto e virgula seria a senha
+
+3 - tudo construido, altera o tipo do arquivo para .csv no renomear.
+
+4 - No programa Apache JMeter, depois de ter montado o ambiente para o teste
+    acrescente um " Elemento de Configuração >> Configuração dos dados CSV " ou caso esteja inglês "Config Element >> config from data CSV "
+
+5 - Na opção nomes de variáveis(separados por vírvula) coloque dois nome de variáveis
+    Exemplo: usuario,senha    << veja que está de acordo com o índice 2 acima (user1@dt.com;user1)
+
+6 - Na opção nome do arquivo direcione o local do arquivo e selecione-o
+
+7 - Na opção Separado altere para ponto e virgula " ; "
+
+8 - Vá no ambiente de Requisição e acrescente dois Parâmetros de Requisição;
+	nome     |  valor     |  codificar? | content-Type | Incluir igual?
+	email      ${usuario}       [ ]        text/plain        [ v ]
+	password   ${senha}         [ ]        text/plain        [ v ]
+
+na aba nome, é simplesmente um apelido
+na aba valor é onde fica as variáveis fica dentro do ${ }
